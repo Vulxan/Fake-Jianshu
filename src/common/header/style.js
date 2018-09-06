@@ -1,5 +1,10 @@
 import styled from "styled-components";
 import React from "react";
+import { Link } from "react-router-dom";
+
+export const StyledRouterLink = styled(Link)`
+  text-decoration: none;
+`
 
 export const StyledHeader = styled.header`
   height: 55px;
@@ -7,19 +12,18 @@ export const StyledHeader = styled.header`
   display: flex;
 `;
 
-const Logo = ({className, href, src}) => (
+const Logo = ({className, src}) => (
   <div className={className}>
-    <StyledLink href={href}>
+    <StyledLink>
       <StyledLogoImg src={src} />
     </StyledLink>
   </div>
 );
 
-const StyledLink = styled.a`
+const StyledLink = styled.div`
   color: #000;
   height: 100%;
-  display: block;
-  text-decoration: none;
+  width: 100px;
 `;
 
 const StyledLogoImg = styled.img`
@@ -32,14 +36,15 @@ export const StyledLogo = styled(Logo)`
 `;
 
 export const StyledNav = styled.div`
-  flex: 1 0 0;
+  flex: 1 1 0;
   display: flex;
-  padding: 0 20px;
+  padding: 0 38px;
   align-items: center;
 `;
 
-export const StyledNavLink = styled(StyledLink)`
+export const StyledNavLink = styled.div`
   color: #333;
+  cursor: pointer;
   &.front-page {
     color: #ea6f5a;
   }
@@ -47,12 +52,12 @@ export const StyledNavLink = styled(StyledLink)`
     color: #969696;
   }
   display: flex;
-  padding: 0 15px;
+  padding: 0 10px;
   box-sizing: border-box;
   justify-content: center;
   align-items: center;
   font-size: 17px;
-  margin: 0 5px;
+  margin-left: 15px;
   word-break: keep-all;
 `
 
@@ -86,6 +91,7 @@ const NavSearch = ({className, focused, handleInputFocus, handleInputBlur, child
 
 export const StyledNavSearch = styled(NavSearch)`
   position: relative;
+  margin-left: 15px;
   .zoom {
     position: absolute;
     right: 5px;
@@ -169,9 +175,11 @@ export const StyledFuncional = styled.div`
   font-size: 17px;
 `
 
-export const StyledBtnLink = styled(StyledLink)`
+export const StyledBtnLink = styled.div`
+  cursor: pointer;
   height: auto;
   box-sizing: border-box;
+  text-align: center;
   &.reg {
     color: #ea6f5a;
     background-color: #FFF;

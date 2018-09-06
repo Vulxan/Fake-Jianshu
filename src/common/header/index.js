@@ -1,16 +1,20 @@
 import React from 'react';
 import { connect } from "react-redux";
 import { actionCreators }  from "./store";
-import { StyledHeader, StyledLogo, StyledNav, StyledNavLink, StyledNavSearch, StyledSearchInfo, StyledFuncional, StyledBtnLink, StyledSearchInfoHeader, StyledSearchInfoTitle, StyledSearchInfoSwitch, StyledSearchInfoContent, StyledSearchInfoContentItem } from './style';
+import { StyledHeader, StyledLogo, StyledNav, StyledNavLink, StyledNavSearch, StyledSearchInfo, StyledFuncional, StyledBtnLink, StyledSearchInfoHeader, StyledSearchInfoTitle, StyledSearchInfoSwitch, StyledSearchInfoContent, StyledSearchInfoContentItem, StyledRouterLink } from './style';
 
 const Header = (props) => {
   const { focused, mouseIn, trending_list, page, totalPage, handleInputBlur, handleInputFocus, handleMouseEnter, handleMouseLeave, handleChangePage } = props;
   let ref = {};
   return  (
       <StyledHeader>
-        <StyledLogo href="/" src="//cdn2.jianshu.io/assets/web/nav-logo-4c7bbafe27adc892f3046e6978459bac.png" />
+        <StyledRouterLink to="/">
+          <StyledLogo src="//cdn2.jianshu.io/assets/web/nav-logo-4c7bbafe27adc892f3046e6978459bac.png" />
+        </StyledRouterLink>
         <StyledNav>
-          <StyledNavLink className="front-page" href="/">首页</StyledNavLink>
+          <StyledRouterLink to="/">
+            <StyledNavLink className="front-page">首页</StyledNavLink>
+          </StyledRouterLink>
           <StyledNavLink href="#">下载APP</StyledNavLink>
           <StyledNavSearch focused={focused} handleInputFocus={() => handleInputFocus(trending_list)} handleInputBlur={handleInputBlur}>
             <StyledSearchInfo  className={focused || mouseIn ? 'show' : 'hide'} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>

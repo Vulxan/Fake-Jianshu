@@ -8,7 +8,7 @@ const List = ({ list, getMoreList, page }) => {
     <div>
       {
         list.map((item, index) => (
-          <StyledRouterLink key={index} to="/detail">
+          <StyledRouterLink key={index} to={`/detail/${item.get('id')}`}>
             <StyledListItem>
               <StyledListItemContent>
                 <StyledListItemTitle to="/detail">{item.get('title')}</StyledListItemTitle>

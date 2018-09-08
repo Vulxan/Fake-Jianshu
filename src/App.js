@@ -4,6 +4,8 @@ import { BrowserRouter, Route } from "react-router-dom";
 import Header from './common/header';
 import Home from "./pages/home";
 import Detail from "./pages/detail";
+import Login from "./pages/login";
+import Reg from "./pages/reg";
 import store from './store';
 
 class App extends Component {
@@ -12,8 +14,10 @@ class App extends Component {
       <Provider store={store}>
           <BrowserRouter>
             <div>
-              <Route path="/" exact render={() => <Fragment><Header /><Home /></Fragment>}></Route>
-              <Route path="/detail/:id" exact render={(props)=><Fragment><Header /><Detail {...props}/></Fragment>}></Route>
+              <Route path="/" exact render={() => <Fragment><Header /><Home /></Fragment>} />
+              <Route path="/detail/:id" exact render={(props)=><Fragment><Header /><Detail {...props}/></Fragment>} />
+              <Route path="/login" exact component={Login} />
+              <Route path="/reg" exact component={Reg} />
             </div>
           </BrowserRouter>
       </Provider>

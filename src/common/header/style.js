@@ -11,6 +11,7 @@ export const StyledHeader = styled.header`
   border-bottom: 1px solid #F0F0F0;
   display: flex;
   position: sticky;
+  z-index: 100;
   top: 0;
   background-color: #FFF;
 `;

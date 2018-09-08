@@ -22,6 +22,43 @@ export const StyledHomeLeft = styled.div`
     height: 270px;
   }
 `
+
+export const StyledSlideWrapper = styled.div`
+  border-radius: 5px;
+  overflow: hidden;
+  width: 625px;
+  height: 270px;
+  position: relative;
+  img {
+    width: 100%;
+    height: 100%;
+  }
+  .slick-arrow {
+    position: absolute;
+    z-index: 10;
+    visibility: hidden;
+    &.slick-prev {
+      left: 5px;
+    }
+    &.slick-next {
+      right: 5px;
+    }
+  }
+  &:hover .slick-arrow {
+    visibility: visible;
+  }
+  .slick-dots {
+    position: absolute;
+    bottom: 5px;
+    li button::before {
+      color: #EEE;
+    }
+    li.slick-active button::before {
+      color: #FFF;
+    }
+  }
+`
+
 export const StyledHomeRight = styled.div`
   flex: 0 0 280px;
 `

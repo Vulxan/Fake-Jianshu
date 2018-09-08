@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { actionCreators } from "./store"
 import { StyledHomeWrapper, StyledHomeLeft, StyledHomeRight, StyledBackTopBtn } from "./style";
 import Topic from "./components/Topic";
+import Carousel from "./components/Carousel";
 import List from "./components/List";
 import Recommend from "./components/Recommend";
 import Writer from "./components/Writer";
@@ -18,7 +19,8 @@ class Home extends PureComponent {
     return (
       <StyledHomeWrapper>
         <StyledHomeLeft>
-          <img className="banner-img" src="//upload.jianshu.io/admin_banners/web_images/4435/c1d3ca63353c8bd527f0d781605516cb5b266d02.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/1250/h/540" alt="swiper-img"/>
+          {/* <img className="banner-img" src="//upload.jianshu.io/admin_banners/web_images/4435/c1d3ca63353c8bd527f0d781605516cb5b266d02.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/1250/h/540" alt="swiper-img"/> */}
+          <Carousel></Carousel>
           <Topic></Topic>
           <List></List>
         </StyledHomeLeft>

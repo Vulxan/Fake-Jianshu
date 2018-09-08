@@ -1,12 +1,16 @@
 import React from "react";
 import { connect } from "react-redux";
-import { Link } from "react-router-dom";
+import { Redirect } from "react-router-dom";
+import { actionCreators }  from "./store";
 import { StyledRouteLink, StyledLogin, StyledLogo, StyledLoginBox, StyledLoginHeader, StyledLoginInputWrapper, StyledLoginFunc, StyledLoginBtn, StyledLoginTip, StyledLoginSocial } from "./style";
 
-const Login = () => {
+const Login = ({login, loginStatus, act, psw, changeAct, changePsw}) => {
+  if (loginStatus) {
+    return <Redirect to="/" />
+  }
   return (
     <StyledLogin>
-      <Link to="/"><StyledLogo src="//cdn2.jianshu.io/assets/web/logo-58fd04f6f0de908401aa561cda6a0688.png" /></Link>
+      <StyledRouteLink to="/"><StyledLogo src="//cdn2.jianshu.io/assets/web/logo-58fd04f6f0de908401aa561cda6a0688.png" /></StyledRouteLink>
       <StyledLoginBox>
         <StyledLoginHeader>
           <StyledRouteLink to="/login"><span className="login">登录</span></StyledRouteLink>
@@ -14,11 +18,11 @@ const Login = () => {
           <StyledRouteLink to="/reg"><span className="reg">注册</span></StyledRouteLink>
         </StyledLoginHeader>
         <StyledLoginInputWrapper>
-          <input type="text" className="act" placeholder="手机号或邮箱"/>
+          <input type="text" className="act" placeholder="手机号或邮箱" value={act} onChange={changeAct} />
           <i className="iconfont">&#xe66c;</i>
         </StyledLoginInputWrapper>
         <StyledLoginInputWrapper>
-          <input type="text" className="psw" placeholder="密码"/>
+          <input type="password" className="psw" placeholder="密码" value={psw} onChange={changePsw} />
           <i className="iconfont">&#xe6a8;</i>
         </StyledLoginInputWrapper>
         <StyledLoginFunc>
@@ -30,7 +34,7 @@ const Login = () => {
             <span>登陆遇到到问题?</span>
           </div>
         </StyledLoginFunc>
-        <StyledLoginBtn>登录</StyledLoginBtn>
+        <StyledLoginBtn onClick={() => login(act, psw)}>登录</StyledLoginBtn>
         <StyledLoginTip><span className="line"></span><span className="tip">社交账号登录</span><span className="line"></span></StyledLoginTip>
         <StyledLoginSocial>
           <i className="iconfont weibo">&#xe737;</i>
@@ -43,4 +47,27 @@ const Login = () => {
   )
 }
 
-export default connect(null, null)(Login);
+const mapSta = (state) => ({
+  loginStatus: state.getIn(['login', 'loginStatus']),
+  act: state.getIn(['login', 'act']),
+  psw: state.getIn(['login', 'psw'])
+})
+
+const mapDis = (dispatch) => ({
+  login (act, psw) {
+    if (act.includes(' ') || psw.includes(' ') || act === '' || psw === '') {
+      dispatch(actionCreators.changeAct(''));
+      dispatch(actionCreators.changePsw(''));
+    } else {
+      dispatch(actionCreators.login(act, psw));
+    }
+  },
+  changeAct (e) {
+    dispatch(actionCreators.changeAct(e.target.value));
+  },
+  changePsw (e) {
+    dispatch(actionCreators.changePsw(e.target.value));
+  }
+})
+
+export default connect(mapSta, mapDis)(Login);

@@ -1,10 +1,11 @@
 import React from 'react';
 import { connect } from "react-redux";
 import { actionCreators }  from "./store";
+import { actionCreators as loginActionCreators } from "../../pages/login/store";
 import { StyledHeader, StyledLogo, StyledNav, StyledNavLink, StyledNavSearch, StyledSearchInfo, StyledFuncional, StyledBtnLink, StyledSearchInfoHeader, StyledSearchInfoTitle, StyledSearchInfoSwitch, StyledSearchInfoContent, StyledSearchInfoContentItem, StyledRouterLink } from './style';
 
 const Header = (props) => {
-  const { focused, mouseIn, trending_list, page, totalPage, handleInputBlur, handleInputFocus, handleMouseEnter, handleMouseLeave, handleChangePage } = props;
+  const { focused, mouseIn, trending_list, page, totalPage, handleInputBlur, handleInputFocus, handleMouseEnter, handleMouseLeave, handleChangePage, loginStatus, logout } = props;
   let ref = {};
   return  (
       <StyledHeader>
@@ -34,9 +35,11 @@ const Header = (props) => {
         </StyledNav>
         <StyledFuncional>
           <StyledNavLink className="light"><i className="iconfont">&#xe636;</i></StyledNavLink>
-          <StyledRouterLink to="/login"><StyledNavLink className="light">登录</StyledNavLink></StyledRouterLink>
+          {
+            loginStatus ? <StyledRouterLink to="/"><StyledNavLink className="light" onClick={logout}>退出</StyledNavLink></StyledRouterLink> : <StyledRouterLink to="/login"><StyledNavLink className="light">登录</StyledNavLink></StyledRouterLink>
+          }
           <StyledRouterLink to="/reg"><StyledBtnLink className="reg">注册</StyledBtnLink></StyledRouterLink>
-          <StyledBtnLink className="arti"><i className="iconfont">&#xe615;</i>写文章</StyledBtnLink>          
+          <StyledRouterLink to="/write"><StyledBtnLink className="arti"><i className="iconfont">&#xe615;</i>写文章</StyledBtnLink></StyledRouterLink>
         </StyledFuncional>
       </StyledHeader>
     )
@@ -48,7 +51,8 @@ const mapStateToProps = (state) => {
     trending_list: state.getIn(['header', 'trending_list']),
     page: state.getIn(['header', 'page']),
     totalPage: state.getIn(['header', 'totalPage']),
-    mouseIn: state.getIn(['header', 'mouseIn'])
+    mouseIn: state.getIn(['header', 'mouseIn']),
+    loginStatus: state.getIn(['login', 'loginStatus'])
   }
 }
 
@@ -80,6 +84,9 @@ const mapDispatchToProps = (dispatch) => {
       } else {
         dispatch(actionCreators.changePage(1));
       }
+    },
+    logout () {
+      dispatch(loginActionCreators.logout());
     }
   }
 }

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import { Provider } from "react-redux";
 import { BrowserRouter, Route } from "react-router-dom";
 import Header from './common/header';
@@ -12,9 +12,8 @@ class App extends Component {
       <Provider store={store}>
           <BrowserRouter>
             <div>
-              <Header />
-              <Route path="/" exact component={Home}></Route>
-              <Route path="/detail/:id" exact component={Detail}></Route>              
+              <Route path="/" exact render={() => <Fragment><Header /><Home /></Fragment>}></Route>
+              <Route path="/detail/:id" exact render={(props)=><Fragment><Header /><Detail {...props}/></Fragment>}></Route>
             </div>
           </BrowserRouter>
       </Provider>

@@ -10,6 +10,9 @@ export const StyledHeader = styled.header`
   height: 55px;
   border-bottom: 1px solid #F0F0F0;
   display: flex;
+  position: sticky;
+  top: 0;
+  background-color: #FFF;
 `;
 
 const Logo = ({className, src}) => (
@@ -50,6 +53,7 @@ export const StyledNavLink = styled.div`
   }
   &.light {
     color: #969696;
+    font-size: 15px;
   }
   display: flex;
   padding: 0 10px;
@@ -83,7 +87,7 @@ const StyledNavSearchInput = styled.input`
 
 const NavSearch = ({className, focused, handleInputFocus, handleInputBlur, children}) => (
   <div className={className}>
-    <StyledNavSearchInput onFocus={handleInputFocus} onBlur={handleInputBlur} className={focused ? 'focused' : ''}/>
+    <StyledNavSearchInput  placeholder="搜索"  onFocus={handleInputFocus} onBlur={handleInputBlur} className={focused ? 'focused' : ''}/>
     <i className={focused ? 'iconfont focused zoom' : 'iconfont zoom'}>&#xe64d;</i>
     {children}
   </div>

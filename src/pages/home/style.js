@@ -3,6 +3,9 @@ import { Link } from "react-router-dom";
 
 export const StyledRouterLink = styled(Link)`
   text-decoration: none;
+  &:first-child > div {
+    border-top: 1px solid #EEE;
+  }
 `
 
 export const StyledHomeWrapper = styled.section`
@@ -66,9 +69,6 @@ export const StyledListItem = styled.div`
   align-items: center;
   border-bottom: 1px solid #EEE;
   padding: 25px 0;
-  &:first-child {
-    border-top: 1px solid #EEE;
-  }
 `
 
 export const StyledListItemContent = styled.div`

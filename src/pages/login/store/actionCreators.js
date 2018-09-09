@@ -17,7 +17,7 @@ const loginSucc = () => ({
 
 export const login = (act, psw) => {
   return (dispatch) => {
-    Axios.get(`api/login.json?act=${act}&psw=${psw}`)
+    Axios.get(process.env.PUBLIC_URL + `api/login.json?act=${act}&psw=${psw}`)
     .then((res) => {
       const loginStatus = res.data.loginStatus;
       if (loginStatus) {

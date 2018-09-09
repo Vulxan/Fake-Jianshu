@@ -3,7 +3,7 @@ import Axios from "axios";
 
 export const getDetailData = (id) => {
   return (dispatch) => {
-    Axios.get('api/detail.json?id=' + id)
+    Axios.get(process.env.PUBLIC_URL + '/api/detail.json?id=' + id)
     .then((res) => {
       const data = res.data.data;
       const action = {

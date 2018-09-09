@@ -2,6 +2,7 @@
   "name": "fake-jianshu",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://vulxan.github.io/Fake-Jianshu/",
   "dependencies": {
     "ajv": "^6.5.3",
     "autoprefixer": "7.1.6",

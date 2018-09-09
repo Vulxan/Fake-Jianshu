@@ -10,7 +10,7 @@ const Login = ({login, loginStatus, act, psw, changeAct, changePsw}) => {
   }
   return (
     <StyledLogin>
-      <StyledRouteLink to={process.env.PUBLIC_URL + "/"}><StyledLogo src="//cdn2.jianshu.io/assets/web/logo-58fd04f6f0de908401aa561cda6a0688.png" /></StyledRouteLink>
+      <StyledRouteLink to={process.env.PUBLIC_URL + "/"}><StyledLogo src="http://cdn2.jianshu.io/assets/web/logo-58fd04f6f0de908401aa561cda6a0688.png" /></StyledRouteLink>
       <StyledLoginBox>
         <StyledLoginHeader>
           <StyledRouteLink to={process.env.PUBLIC_URL + "/login"}><span className="login">登录</span></StyledRouteLink>

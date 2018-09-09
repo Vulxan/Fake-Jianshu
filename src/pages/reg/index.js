@@ -6,7 +6,7 @@ import { StyledRouteLink, StyledReg, StyledLogo, StyledRegBox, StyledRegHeader, 
 const Reg = () => {
   return (
     <StyledReg>
-      <Link to={process.env.PUBLIC_URL + "/"}><StyledLogo src="//cdn2.jianshu.io/assets/web/logo-58fd04f6f0de908401aa561cda6a0688.png" /></Link>
+      <Link to={process.env.PUBLIC_URL + "/"}><StyledLogo src="http://cdn2.jianshu.io/assets/web/logo-58fd04f6f0de908401aa561cda6a0688.png" /></Link>
       <StyledRegBox>
         <StyledRegHeader>
           <StyledRouteLink to={process.env.PUBLIC_URL + "/login"}><span className="login">登录</span></StyledRouteLink>

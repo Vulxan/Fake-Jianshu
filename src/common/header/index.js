@@ -10,7 +10,7 @@ const Header = (props) => {
   return  (
       <StyledHeader>
         <StyledRouterLink to={process.env.PUBLIC_URL + "/"}>
-          <StyledLogo src="//cdn2.jianshu.io/assets/web/nav-logo-4c7bbafe27adc892f3046e6978459bac.png" />
+          <StyledLogo src="http://cdn2.jianshu.io/assets/web/nav-logo-4c7bbafe27adc892f3046e6978459bac.png" />
         </StyledRouterLink>
         <StyledNav>
           <StyledRouterLink to={process.env.PUBLIC_URL + "/"}>

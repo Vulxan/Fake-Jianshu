@@ -52,6 +52,7 @@ export const StyledLoginInputWrapper = styled.div`
   width: 300px;
   margin: 0 auto;
   input {
+    margin: 0;
     font-size: 14px;
     border-bottom: 1px solid rgb(200, 200, 200);
     border-left: 1px solid rgb(200, 200, 200);
@@ -109,6 +110,7 @@ export const StyledLoginFunc = styled.div`
   }
 `
 export const StyledLoginBtn = styled.button`
+  border: none;
   width: 300px;
   cursor: pointer;
   margin: 0 auto 58px auto;

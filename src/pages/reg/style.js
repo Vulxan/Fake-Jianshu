@@ -84,6 +84,7 @@ export const StyledRegInputWrapper = styled.div`
 `
 
 export const StyledRegBtn = styled.button`
+  border: none;
   width: 300px;
   cursor: pointer;
   margin: 20px auto;

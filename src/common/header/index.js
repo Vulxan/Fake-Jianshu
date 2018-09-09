@@ -36,7 +36,7 @@ const Header = (props) => {
         <StyledFuncional>
           <StyledNavLink className="light"><i className="iconfont">&#xe636;</i></StyledNavLink>
           {
-            loginStatus ? <StyledRouterLink to={process.env.PUBLIC_URL + "/"}><StyledNavLink className="light" onClick={logout}>退出</StyledNavLink></StyledRouterLink> : <StyledRouterLink to={process.env.PUBLIC_URL + "login"}><StyledNavLink className="light">登录</StyledNavLink></StyledRouterLink>
+            loginStatus ? <StyledRouterLink to={process.env.PUBLIC_URL + "/"}><StyledNavLink className="light" onClick={logout}>退出</StyledNavLink></StyledRouterLink> : <StyledRouterLink to={process.env.PUBLIC_URL + "/login"}><StyledNavLink className="light">登录</StyledNavLink></StyledRouterLink>
           }
           <StyledRouterLink to={process.env.PUBLIC_URL + "/reg"}><StyledBtnLink className="reg">注册</StyledBtnLink></StyledRouterLink>
           <StyledRouterLink to={process.env.PUBLIC_URL + "/write"}><StyledBtnLink className="arti"><i className="iconfont">&#xe615;</i>写文章</StyledBtnLink></StyledRouterLink>

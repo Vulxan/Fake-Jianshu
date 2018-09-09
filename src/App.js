@@ -15,11 +15,11 @@ class App extends Component {
       <Provider store={store}>
           <BrowserRouter>
             <div>
-              <Route path="/" exact render={() => <Fragment><Header /><Home /></Fragment>} />
-              <Route path="/detail/:id" exact render={(props)=><Fragment><Header /><Detail {...props}/></Fragment>} />
-              <Route path="/login" exact component={Login} />
-              <Route path="/reg" exact component={Reg} />
-              <Route path="/write" exact component={Write} />
+              <Route path={process.env.PUBLIC_URL + "/"} exact render={() => <Fragment><Header /><Home /></Fragment>} />
+              <Route path={process.env.PUBLIC_URL+ "/detail/:id"} exact render={(props)=><Fragment><Header /><Detail {...props}/></Fragment>} />
+              <Route path={process.env.PUBLIC_URL + "/login"} exact component={Login} />
+              <Route path={process.env.PUBLIC_URL + "/reg"} exact component={Reg} />
+              <Route path={process.env.PUBLIC_URL + "/write"} exact component={Write} />
             </div>
           </BrowserRouter>
       </Provider>

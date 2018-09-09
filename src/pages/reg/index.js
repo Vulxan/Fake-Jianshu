@@ -9,9 +9,9 @@ const Reg = () => {
       <Link to="/"><StyledLogo src="//cdn2.jianshu.io/assets/web/logo-58fd04f6f0de908401aa561cda6a0688.png" /></Link>
       <StyledRegBox>
         <StyledRegHeader>
-          <StyledRouteLink to="/login"><span className="login">登录</span></StyledRouteLink>
+          <StyledRouteLink to="login"><span className="login">登录</span></StyledRouteLink>
           <span>·</span>
-          <StyledRouteLink to="/reg"><span className="reg">注册</span></StyledRouteLink>
+          <StyledRouteLink to="reg"><span className="reg">注册</span></StyledRouteLink>
         </StyledRegHeader>
         <StyledRegInputWrapper>
           <input type="text" className="nickname" placeholder="你的昵称"/>

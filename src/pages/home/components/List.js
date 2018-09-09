@@ -8,10 +8,10 @@ const List = ({ list, getMoreList, page }) => {
     <div>
       {
         list.map((item, index) => (
-          <StyledRouterLink key={index} to={`/detail/${item.get('id')}`}>
+          <StyledRouterLink key={index} to={`detail/${item.get('id')}`}>
             <StyledListItem>
               <StyledListItemContent>
-                <StyledListItemTitle to="/detail">{item.get('title')}</StyledListItemTitle>
+                <StyledListItemTitle>{item.get('title')}</StyledListItemTitle>
                 <StyledListItemDesc>{item.get('desc')}</StyledListItemDesc>
                 <StyledListItemInfo>
                   <span className="user">{item.get('user')}</span><span className="comments"><i className="iconfont">&#xe621;</i>{item.get('comments')}</span><span className="like"><i className="iconfont">&#xe6f4;</i>{item.get('like')}</span>

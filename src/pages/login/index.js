@@ -13,9 +13,9 @@ const Login = ({login, loginStatus, act, psw, changeAct, changePsw}) => {
       <StyledRouteLink to="/"><StyledLogo src="//cdn2.jianshu.io/assets/web/logo-58fd04f6f0de908401aa561cda6a0688.png" /></StyledRouteLink>
       <StyledLoginBox>
         <StyledLoginHeader>
-          <StyledRouteLink to="/login"><span className="login">登录</span></StyledRouteLink>
+          <StyledRouteLink to="login"><span className="login">登录</span></StyledRouteLink>
           <span>·</span>
-          <StyledRouteLink to="/reg"><span className="reg">注册</span></StyledRouteLink>
+          <StyledRouteLink to="reg"><span className="reg">注册</span></StyledRouteLink>
         </StyledLoginHeader>
         <StyledLoginInputWrapper>
           <input type="text" className="act" placeholder="手机号或邮箱" value={act} onChange={changeAct} />

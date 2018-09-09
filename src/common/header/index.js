@@ -36,10 +36,10 @@ const Header = (props) => {
         <StyledFuncional>
           <StyledNavLink className="light"><i className="iconfont">&#xe636;</i></StyledNavLink>
           {
-            loginStatus ? <StyledRouterLink to="/"><StyledNavLink className="light" onClick={logout}>退出</StyledNavLink></StyledRouterLink> : <StyledRouterLink to="/login"><StyledNavLink className="light">登录</StyledNavLink></StyledRouterLink>
+            loginStatus ? <StyledRouterLink to="/"><StyledNavLink className="light" onClick={logout}>退出</StyledNavLink></StyledRouterLink> : <StyledRouterLink to="login"><StyledNavLink className="light">登录</StyledNavLink></StyledRouterLink>
           }
-          <StyledRouterLink to="/reg"><StyledBtnLink className="reg">注册</StyledBtnLink></StyledRouterLink>
-          <StyledRouterLink to="/write"><StyledBtnLink className="arti"><i className="iconfont">&#xe615;</i>写文章</StyledBtnLink></StyledRouterLink>
+          <StyledRouterLink to="reg"><StyledBtnLink className="reg">注册</StyledBtnLink></StyledRouterLink>
+          <StyledRouterLink to="write"><StyledBtnLink className="arti"><i className="iconfont">&#xe615;</i>写文章</StyledBtnLink></StyledRouterLink>
         </StyledFuncional>
       </StyledHeader>
     )

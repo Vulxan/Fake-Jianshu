@@ -25,7 +25,7 @@ export const mouseLeave = () => ({
 })
 
 export const getTrendingList = () => (dispatch) => {
-  Axios.get('/api/trendingList.json')
+  Axios.get('api/trendingList.json')
   .then((res) => {
     const data = res.data;
     if (data.suc) {

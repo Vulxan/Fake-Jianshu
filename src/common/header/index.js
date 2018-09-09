@@ -9,11 +9,11 @@ const Header = (props) => {
   let ref = {};
   return  (
       <StyledHeader>
-        <StyledRouterLink to="/">
+        <StyledRouterLink to={process.env.PUBLIC_URL + "/"}>
           <StyledLogo src="//cdn2.jianshu.io/assets/web/nav-logo-4c7bbafe27adc892f3046e6978459bac.png" />
         </StyledRouterLink>
         <StyledNav>
-          <StyledRouterLink to="/">
+          <StyledRouterLink to={process.env.PUBLIC_URL + "/"}>
             <StyledNavLink className="front-page">首页</StyledNavLink>
           </StyledRouterLink>
           <StyledNavLink href="#">下载APP</StyledNavLink>
@@ -36,10 +36,10 @@ const Header = (props) => {
         <StyledFuncional>
           <StyledNavLink className="light"><i className="iconfont">&#xe636;</i></StyledNavLink>
           {
-            loginStatus ? <StyledRouterLink to="/"><StyledNavLink className="light" onClick={logout}>退出</StyledNavLink></StyledRouterLink> : <StyledRouterLink to="login"><StyledNavLink className="light">登录</StyledNavLink></StyledRouterLink>
+            loginStatus ? <StyledRouterLink to={process.env.PUBLIC_URL + "/"}><StyledNavLink className="light" onClick={logout}>退出</StyledNavLink></StyledRouterLink> : <StyledRouterLink to={process.env.PUBLIC_URL + "login"}><StyledNavLink className="light">登录</StyledNavLink></StyledRouterLink>
           }
-          <StyledRouterLink to="reg"><StyledBtnLink className="reg">注册</StyledBtnLink></StyledRouterLink>
-          <StyledRouterLink to="write"><StyledBtnLink className="arti"><i className="iconfont">&#xe615;</i>写文章</StyledBtnLink></StyledRouterLink>
+          <StyledRouterLink to={process.env.PUBLIC_URL + "/reg"}><StyledBtnLink className="reg">注册</StyledBtnLink></StyledRouterLink>
+          <StyledRouterLink to={process.env.PUBLIC_URL + "/write"}><StyledBtnLink className="arti"><i className="iconfont">&#xe615;</i>写文章</StyledBtnLink></StyledRouterLink>
         </StyledFuncional>
       </StyledHeader>
     )

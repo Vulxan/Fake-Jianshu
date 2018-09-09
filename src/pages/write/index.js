@@ -4,10 +4,10 @@ import { connect } from "react-redux";
 
 const Write = ({loginStatus}) => {
   if (!loginStatus) {
-    return <Redirect to="/login" />
+    return <Redirect to={process.env.PUBLIC_URL + "/login"} />
   }
   return (
-    <h1>To be done...<Link to="/">back to homepage</Link></h1>
+    <h1>To be done...<Link to={process.env.PUBLIC_URL + "/"}>back to homepage</Link></h1>
   )
 }
 

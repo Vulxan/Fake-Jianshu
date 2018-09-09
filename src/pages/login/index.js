@@ -6,16 +6,16 @@ import { StyledRouteLink, StyledLogin, StyledLogo, StyledLoginBox, StyledLoginHe
 
 const Login = ({login, loginStatus, act, psw, changeAct, changePsw}) => {
   if (loginStatus) {
-    return <Redirect to="/" />
+    return <Redirect to={process.env.PUBLIC_URL + "/"} />
   }
   return (
     <StyledLogin>
-      <StyledRouteLink to="/"><StyledLogo src="//cdn2.jianshu.io/assets/web/logo-58fd04f6f0de908401aa561cda6a0688.png" /></StyledRouteLink>
+      <StyledRouteLink to={process.env.PUBLIC_URL + "/"}><StyledLogo src="//cdn2.jianshu.io/assets/web/logo-58fd04f6f0de908401aa561cda6a0688.png" /></StyledRouteLink>
       <StyledLoginBox>
         <StyledLoginHeader>
-          <StyledRouteLink to="login"><span className="login">登录</span></StyledRouteLink>
+          <StyledRouteLink to={process.env.PUBLIC_URL + "login"}><span className="login">登录</span></StyledRouteLink>
           <span>·</span>
-          <StyledRouteLink to="reg"><span className="reg">注册</span></StyledRouteLink>
+          <StyledRouteLink to={process.env.PUBLIC_URL + "reg"}><span className="reg">注册</span></StyledRouteLink>
         </StyledLoginHeader>
         <StyledLoginInputWrapper>
           <input type="text" className="act" placeholder="手机号或邮箱" value={act} onChange={changeAct} />
